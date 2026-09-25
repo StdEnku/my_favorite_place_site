@@ -1,0 +1,55 @@
+/* #region 全体設定 */
+:root {
+    --primary-background: #0F172A;
+    --primary-text: #F8FAFC;
+
+    --secondary-background: #1E293B;
+    --secondary-text: #94A3B8;
+}
+
+* {
+    box-sizing: border-box;
+}
+/* #endregion */
+
+html {
+    background-color: var(--primary-background);
+    color: var(--primary-text);
+}
+
+.root {
+    display: grid;
+    grid-template-columns: 200px auto;
+}
+
+.sideBar {
+    text-align: center;
+}
+
+.sideBar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sideBar li {
+    height: 50px;
+}
+
+header {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.centerContent {
+    text-align: center;
+}
+
