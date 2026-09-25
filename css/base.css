@@ -3,8 +3,10 @@
     --primary-background: #0F172A;
     --primary-text: #F8FAFC;
 
-    --secondary-background: #1E293B;
+    --secondary-background: #2f3847;
     --secondary-text: #94A3B8;
+
+    --card-background: #20293a;
 }
 
 * {
@@ -19,7 +21,7 @@ html {
 
 .root {
     display: grid;
-    grid-template-columns: 200px auto;
+    grid-template-columns: 300px auto;
 }
 
 .sideBar {

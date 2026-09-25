@@ -1,7 +1,7 @@
 /* #region sidebar-item */
 .sidebar-item {
     color: var(--secondary-text);
-    
+ 
 }
 
 .sidebar-item:link {
@@ -20,7 +20,7 @@
 }
 
 .sidebar-item:hover {
-    padding: 20px 30px 20px 30px;
+    padding: 15px 25px 15px 25px;
     color: var(--primary-text);
     background-color: var(--secondary-background);
     border-radius: 3px;
@@ -32,4 +32,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+}
+
+.card {
+    background-color: var(--card-background);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
 }
