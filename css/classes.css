@@ -1,3 +1,19 @@
+/* #region sidebar */
+.sideBar {
+    text-align: center;
+}
+
+.sideBar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sideBar li {
+    height: 50px;
+}
+/* #endregion */
+
 /* #region sidebar-item */
 .sidebar-item {
     color: var(--secondary-text);
@@ -28,6 +44,11 @@
 }
 /* #endregion */
 
+.sidebar-content-sepalater {
+    display: grid;
+    grid-template-columns: 300px auto;
+}
+
 .split2Items {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -37,6 +58,10 @@
 .card {
     background-color: var(--card-background);
     padding: 20px;
-    margin: 20px;
+    margin: 10px;
     border-radius: 10px;
+}
+
+.centerContent {
+    text-align: center;
 }

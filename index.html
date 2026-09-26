@@ -2,12 +2,14 @@
 <html>
 
 <head>
+    <!-- #region head情報 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>おすすめのバイク旅行スポット紹介 | Home</title>
 
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/classes.css">
+    <!-- #endregion -->
 </head>
 
 <body>
@@ -15,18 +17,21 @@
         <h1 class="card">🏍おすすめのバイク旅行スポット紹介🏍</h1>
     </header>
 
-    <main id="rootId">
-        <div class="root">
+    <main>
+        <div class="sidebar-content-sepalater">
+            <!-- #region サイドバー -->
             <div class="sideBar card">
                 <ul>
-                    <li><a href="#rootId" class="sidebar-item">Home</a></li>
+                    <li><a href="./index.html" class="sidebar-item">Home</a></li>
                     <li><a href="./html/chausuyama.html" class="sidebar-item">茶臼山</a></li>
-                    <li><a href="./html/chausuyama.html" class="sidebar-item">ビーナスライン</a></li>
+                    <li><a href="./html/venus_line.html" class="sidebar-item">ビーナスライン</a></li>
                     <li><a href="./html/tsukechi.html" class="sidebar-item">付知峡</a></li>
                 </ul>
             </div>
+            <!-- #endregion -->
 
-            <div class="mainContent">
+            <!-- #region ここからメインコンテンツ -->
+            <div><!-- 意味のないdivに見えるかもしれないがsidebar-content-sepalaterの子供は二つまでなのでメインコンテンツはここに入れていく -->
                 <div class="card">
                     <h1 class="centerContent">ようこそ当サイトへ!</h1>
                     <img src="./rsc/hero.JPG" alt="hero">
@@ -94,15 +99,17 @@
 
                     <h3>特徴</h3>
                     <p>
-                        <a href="https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%AF%E3%82%B5%E3%82%AD%E3%83%BBZZR1400">ZZR1400 / Ninja ZX-14</a>は、カワサキが2006年に発表したメガスポーツツアラーであり、コンセプトは
+                        <a href="https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%AF%E3%82%B5%E3%82%AD%E3%83%BBZZR1400">ZZR1400
+                            / Ninja ZX-14</a>は、カワサキが2006年に発表したメガスポーツツアラーであり、コンセプトは
                     </p>
                 </div>
             </div>
+            <!-- #endregion -->
         </div>
     </main>
 
     <footer>
-        <p class="card">&copy; Yoshiki Tanaka 2026</p>
+        <a href="./html/license.html">&copy; Yoshiki Tanaka 2026</a>
     </footer>
 </body>
 
