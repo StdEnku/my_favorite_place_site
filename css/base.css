@@ -55,12 +55,14 @@ a:hover {
 }
 /* #endregion */
 
+/* #region bg-canvas */
 #bg-canvas {
-    position: fixed;        /* 画面を基準に固定し、スクロールしても追従させる */
+    position: fixed;        /* スクロールに追従 */
     top: 0;
     left: 0;
-    width: 100vw;           /* 画面の幅いっぱいに広げる */
-    height: 100vh;          /* 画面の高さいっぱいに広げる */
-    z-index: -1;            /* 他の要素より奥（背後）に配置する */
-    pointer-events: none;
+    width: 100vw;           /* vwはブラウザの画面幅に対する割合、よって画面幅全体まで広げる */
+    height: 100vh;          /* vwはブラウザの画面の高さに対する割合、よって画面の高さ全体まで広げる */
+    z-index: -1;            /* 描画優先順位を上げてオーバーレイ */
+    /* pointer-events: none; */
 }
+/* #endregion */
