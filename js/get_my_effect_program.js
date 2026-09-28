@@ -6,9 +6,10 @@ function GetMyEffectProgram() {
   const vertexShaderSource = `#version 300 es
     in vec2 a_position;
     out vec2 varyingVPos;
+    
     void main() {
-      varyingVPos = a_position * 0.5 + 0.5;
-      gl_Position = vec4(a_position, 0.0, 1.0);
+      varyingVPos = a_position * 0.5 + 0.5;// -1~1までを0~1までに修正
+      gl_Position = vec4(a_position, 0.0, 1.0);// 頂点情報として次のパイプラインに渡す。
     }
   `;
 
@@ -21,27 +22,40 @@ function GetMyEffectProgram() {
     out vec4 outColor;
 
     void main() {
-      vec3 bgColor = vec3(0.01, 0.01, 0.02); // わずかに青みがかった黒
-      vec3 prColor = vec3(0.05, 0.15, 0.40); // 紺
+      const vec3 bgColor = vec3(0.01, 0.01, 0.02); // わずかに青みがかった黒
+      const vec3 prColor = vec3(0.05, 0.15, 0.40); // 紺
 
-      // openglのy軸とjsのy軸が逆なので合わせた本当のマウスポジション
-      vec2 actualMousePos = vec2(u_mousepos.x, 1.0 - u_mousepos.y);
+      /*----------------------------------------------------
+        ↓ここからマウスの位置と画面の横軸から振幅を計算していく
+      ----------------------------------------------------*/
+      vec2 actualMousePos = vec2(u_mousepos.x, 1.0 - u_mousepos.y);// openglのy軸とjsのy軸が逆なので合わせた本当のマウスポジション
+      const float ampOffset = 0.3;// 振幅オフセット
+      const float ampWeight = 0.4;// 振幅重み
+      const float effectW = 0.4;// エフェクトの幅(0~1)
 
-      // 画面の横位置と、マウスの横位置がどれくらい離れているか
-      float distToMouseX = abs(varyingVPos.x - actualMousePos.x);
+      float distX = abs(varyingVPos.x - actualMousePos.x);// ピクセルとマウスのx軸が近いほど0に近くなる値
+      float amp = 1.0 - smoothstep(0.0, effectW, distX);// 振幅の幅を急にする処理
+      amp = ampOffset + amp * ampWeight;// 画面の横位置とマウスの横位置が近いほど大きくなる振幅
+
+      /*-------------------------------------
+        ↓ここから実際の正弦波のy軸を計算していく
+      --------------------------------------*/
+      // 波の高さ
+      const float freqW = 4.0;// 周波数の重み
+      const float radW = 1.5;// 位相の重み
       
-      // マウスから 0.4 以内の距離なら 1.0、遠ければ 0.0 になるマスクを作る
-      float mouseEffect = 1.0 - smoothstep(0.0, 0.4, distToMouseX);
+      // y = A * sin(2πf + θ)
+      float waveY = sin(varyingVPos.x * freqW + u_time * radW) * amp;
+      float waveYNormed =  0.5 + waveY * 0.5;// -1~1までの振幅を0~1までに正規化
 
-      float amp = 0.3 + mouseEffect * 0.4;
+      /*---------------------------
+        波の高さから実際のピクセルの色を計算する部分
+      ----------------------------*/
+      const float colorChangeRegionW = 0.02;// 色変化領域の重み 
 
-      float waveY = 0.5 + sin(varyingVPos.x * 4.0 + u_time * 1.5) * 0.5 * amp;
-
-      float lineDist = abs(varyingVPos.y - waveY);
-      float line = smoothstep(0.02, 0.0, lineDist);
-
-      vec3 finalColor = mix(bgColor, prColor, line);
-
+      float distY = abs(varyingVPos.y - waveYNormed);// 振幅とピクセルの高さとの差
+      float colorW = smoothstep(colorChangeRegionW, 0.0, distY);// 色変化を急なものに
+      vec3 finalColor = mix(bgColor, prColor, colorW);// 背景色と線の色をアナログ的に切り替える
       outColor = vec4(finalColor, 1.0);
     }
   `;
