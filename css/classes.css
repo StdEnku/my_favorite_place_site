@@ -60,6 +60,12 @@
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
+
+    opacity: 0;
+    transform: translateY(30px);
+
+    --anim-time : 0.8s;
+    transition: opacity var(--anim-time) ease, transform var(--anim-time) ease;
 }
 
 .centerContent {
