@@ -24,7 +24,7 @@
         <h1 class="card">🏍おすすめのバイク旅行スポット紹介🏍</h1>
     </header>
 
-    <main>
+    <main id="top">
         <div class="sidebar-content-sepalater">
             <!-- #region サイドバー -->
             <div class="sideBar card">
@@ -75,10 +75,12 @@
                         </tr>
                     </table>
                 </div>
-
-                <div class="centerContent card">
-                    <h2>アクセス</h2>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2469.7727495793742!2d137.438530825786!3d35.643295872599566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600332b7b5a8d4ff%3A0xdce656dd27fa5eff!2z6YGT44Gu6aeFIOiKseihl-mBk-S7mOefpQ!5e1!3m2!1sja!2sjp!4v1790647845784!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                
+                <div class="centerContent">
+                    <div class="card">
+                        <h2>アクセス</h2>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2469.7727495793742!2d137.438530825786!3d35.643295872599566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600332b7b5a8d4ff%3A0xdce656dd27fa5eff!2z6YGT44Gu6aeFIOiKseihl-mBk-S7mOefpQ!5e1!3m2!1sja!2sjp!4v1790647845784!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
                 </div>
             </div>
             <!-- #endregion -->
@@ -86,7 +88,12 @@
     </main>
 
     <footer>
-        <a href="./license.html">&copy; Yoshiki Tanaka 2026</a>
+        <div class="footerCard">
+            <a href="#top" class="leftContent">TOP</a>
+        </div>
+        <div class="footerCard">
+            <a href="./license.html">&copy; Yoshiki Tanaka 2026</a>
+        </div>
     </footer>
 </body>
 

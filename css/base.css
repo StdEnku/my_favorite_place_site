@@ -32,6 +32,12 @@ header {
 /* #region footer */
 footer {
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 300px auto;
 }
 /* #endregion*/
 
