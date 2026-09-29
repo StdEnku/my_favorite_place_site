@@ -15,6 +15,7 @@ const intersectionobserver = new IntersectionObserver((entries) => {
             const deleyExeFunc = () => {
                 card.style.opacity = '1';
                 card.style.transform = 'translateY(0)';
+                intersectionobserver.unobserve(card);// 遅延実行後登録解除
             };
 
             setTimeout(deleyExeFunc, delay);// 遅延実行
