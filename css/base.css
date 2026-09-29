@@ -7,6 +7,8 @@
     --secondary-text: #94A3B8;
 
     --card-background: #20293a83;
+
+    --table-border: #94a3b846;
 }
 
 * {
@@ -67,3 +69,8 @@ a:hover {
     /* pointer-events: none; */
 }
 /* #endregion */
+
+table, th, td {
+    border: 2px solid var(--table-border);
+    border-collapse: collapse;
+}
