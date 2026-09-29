@@ -29,18 +29,6 @@ header {
 }
 /* #endregion */
 
-/* #region footer */
-footer {
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-
-    display: grid;
-    grid-template-columns: 300px auto;
-}
-/* #endregion*/
-
 /* #region img */
 img {
     max-width: 100%;
@@ -72,7 +60,6 @@ a:hover {
     width: 100vw;           /* vwはブラウザの画面幅に対する割合、よって画面幅全体まで広げる */
     height: 100vh;          /* vwはブラウザの画面の高さに対する割合、よって画面の高さ全体まで広げる */
     z-index: -1;            /* 描画優先順位を上げてオーバーレイ */
-    /* pointer-events: none; */
 }
 /* #endregion */
 

@@ -68,13 +68,6 @@
     transition: opacity var(--anim-time) ease, transform var(--anim-time) ease;
 }
 
-.footerCard {
-    background-color: var(--card-background);
-    padding: 0px 20px 0px 20px;
-    margin: 0px 10px 0px 10px;
-    border-radius: 10px;
-}
-
 .centerContent {
     text-align: center;
 }
