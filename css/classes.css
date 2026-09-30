@@ -17,7 +17,7 @@
 /* #region sidebar-item */
 .sidebar-item {
     color: var(--secondary-text);
- 
+    transition-duration: 0.1s;
 }
 
 .sidebar-item:link {
@@ -70,4 +70,15 @@
 
 .centerContent {
     text-align: center;
+}
+
+.leftText {
+    text-align: left;
+}
+
+.rightText {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+    text-align: left;
 }
